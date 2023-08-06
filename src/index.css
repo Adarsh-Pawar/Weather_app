@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.glassCard{
+  background:  rgba(225,225,225,0.18);
+  box-shadow:  0 8px 32px 0 rgba(31,38,135,0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(225,225,225,0.18);
+}
+
+.search, .title {
+  background:  rgba(225,225,225,0.18);
+  box-shadow:  0 8px 32px 0 rgba(31,38,135,0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(225,225,225,0.18);
+  /* opacity: 0; */
+}
+
+.searchInput {
+  background:  rgba(225,225,225,0.18);
+  box-shadow:  0 8px 32px 0 rgba(31,38,135,0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(225,225,225,0.18);
+  opacity: 0.7;
+  color: white;
+}
+
+.searchInput::placeholder { /* Most modern browsers support this now. */
+  color: white;
+}
+
+.video .img {
+  display: none;
+}
+
+
+@media only screen and (max-width:1290px) {
+  .header {
+    padding: 0;
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .title{
+    margin-bottom: 20px;
+  }
+
+  .main{
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .minicard {
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .video .vid {
+    display: none;
+  }
+
+  .video .img {
+    display: block;
+  }
+
+}
+
+@media only screen and (min-width:1291px) {
+  .video .vid {
+    display: block;
+  }
+
+  .video .img {
+    display: none;
+  }
+}
+
+/* .group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+ }
+ 
+ .input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: .3s ease;
+ }
+ 
+ .input::placeholder {
+  color: #9e9ea7;
+ }
+ 
+ .input:focus, input:hover {
+  outline: none;
+  border-color: rgba(234,76,137,0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+ }
+ 
+ .icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+ }  */
