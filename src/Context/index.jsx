@@ -40,6 +40,7 @@ export const StateContextProvider = ({ children }) => {
 
             flag = true;
         } catch (e) {
+            //if error
             console.error(e);
             toast.error('This place (' +place+ ') does not exist', {
                 position: "top-center",
