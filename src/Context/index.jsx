@@ -24,14 +24,13 @@ export const StateContextProvider = ({ children }) => {
                 shortColumnNames: 0,
             },
             headers: {
-                'X-RapidAPI-Key': 'a41f24dc2cmsh9a8db4b53e42059p14f4d0jsn07df39fc9817',
+                'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
                 'X-RapidAPI-Host': 'visual-crossing-weather.p.rapidapi.com'
             }
             
         }
 
         try {
-            console.log(import.meta.env.VITE_API_KEY);
             const response = await axios.request(options);
             console.log(response.data)
             const thisData = Object.values(response.data.locations)[0]
