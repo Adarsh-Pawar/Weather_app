@@ -11,7 +11,7 @@ import Fog from '../assets/images/fog.jpg'
 import Snow from '../assets/images/snow.jpg'
 import Storm from '../assets/images/Stormy.jpg'
 import Rainy from '../assets/images/Rainy.jpg'
-import Clear from '../assets/images/Clear.jpg'
+import Clear from '../assets/images/clear.jpg'
 import Cloudy from '../assets/images/Cloudy.jpg'
 import Overcast from '../assets/images/overcast.jpg'
 import "../index.css";
