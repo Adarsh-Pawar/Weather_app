@@ -41,7 +41,6 @@ export const StateContextProvider = ({ children }) => {
             flag = true;
         } catch (e) {
             console.error(e);
-            // if the api throws error.
             toast.error('This place (' +place+ ') does not exist', {
                 position: "top-center",
                 autoClose: 5000,
