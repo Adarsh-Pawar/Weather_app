@@ -2,6 +2,7 @@ import { useContext, createContext, useState, useEffect } from "react";
 import axios from 'axios'
 import { toast } from "react-toastify";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
 const StateContext = createContext()
 var flag = true;
 export const StateContextProvider = ({ children }) => {
@@ -24,7 +25,7 @@ export const StateContextProvider = ({ children }) => {
                 shortColumnNames: 0,
             },
             headers: {
-                'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
+                'X-RapidAPI-Key': API_KEY,
                 'X-RapidAPI-Host': 'visual-crossing-weather.p.rapidapi.com'
             }
             
