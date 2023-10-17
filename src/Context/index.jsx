@@ -24,7 +24,7 @@ export const StateContextProvider = ({ children }) => {
                 shortColumnNames: 0,
             },
             headers: {
-                'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
+                'X-RapidAPI-Key': 'a41f24dc2cmsh9a8db4b53e42059p14f4d0jsn07df39fc9817',
                 'X-RapidAPI-Host': 'visual-crossing-weather.p.rapidapi.com'
             }
             
