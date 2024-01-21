@@ -33,7 +33,7 @@ export const StateContextProvider = ({ children }) => {
 
         try {
             const response = await axios.request(options);
-            console.log(response.data)
+            // console.log(response.data)
             const thisData = Object.values(response.data.locations)[0]
             setTimeZone(thisData.tz)
             setLocation(thisData.address)
@@ -43,7 +43,7 @@ export const StateContextProvider = ({ children }) => {
             flag = true;
         } catch (e) {
             //if error
-            console.error(e);
+            // console.error(e);
             toast.error('This place (' +place+ ') does not exist', {
                 position: "top-center",
                 autoClose: 5000,
@@ -77,9 +77,9 @@ export const StateContextProvider = ({ children }) => {
         fetchWeather()
     }, [place])
 
-    useEffect(() => {
-        console.log(values)
-    }, [values])
+    // useEffect(() => {
+    //     console.log(values)
+    // }, [values])
 
     return (
         <StateContext.Provider value={{
