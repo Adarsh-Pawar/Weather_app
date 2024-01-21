@@ -64,8 +64,8 @@ const BackgroundLayout = () => {
     <>
     <div className="video">
     {/* <img src={image} alt="weather_image" className='h-screen w-full fixed left-0 top-0 -z-[10] img' /> */}
+    <video className="fixed left-0 top-0 -z-[10] img" src={image} autoPlay loop muted></video>
     <video className="fixed left-0 top-0 -z-[10] vid" src={video} autoPlay loop muted></video>
-    <video className="h-screen w-full fixed left-0 top-0 -z-[10] img" src={image} autoPlay loop muted></video>
     </div>
     </>
   )

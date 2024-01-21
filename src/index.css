@@ -86,9 +86,6 @@
 
   .video .img {
     display: block;
-    position: fixed;
-    padding: 0;
-    height: 100vh;
   }
 
   .mainCard {
