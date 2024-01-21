@@ -11,8 +11,8 @@ import Fog from '../assets/images/fog.jpg'
 import Snow from '../assets/images/snow.jpg'
 import Storm from '../assets/images/Stormy.jpg'
 import Rainy from '../assets/images/Rainy.jpg'
-// import Clear from '../assets/images/clear.jpg'
-// import Cloudy from '../assets/images/Cloudy.jpg'
+import Clear from '../assets/images/clear.jpg'
+import Cloudy from '../assets/images/Cloudy.jpg'
 import Overcast from '../assets/images/overcast.jpg'
 import "../index.css";
 
@@ -26,8 +26,6 @@ const BackgroundLayout = () => {
   const Clearv = 'https://res.cloudinary.com/dlouyhixk/video/upload/v1705859030/clear_qlecwq.mp4';
   const Overcastv = 'https://res.cloudinary.com/dlouyhixk/video/upload/v1705852305/overcast_aukwzq.mp4';
 
-  const Cloudy = 'https://res.cloudinary.com/dlouyhixk/video/upload/v1705862125/cloudy_f7kmer.mp4';
-  const Clear = 'https://res.cloudinary.com/dlouyhixk/video/upload/v1705863093/clear_xrydrd.mp4';
   const { weather } = useStateContext()
   const [image, setImage] = useState(Clear)
   const [video, setVideo] = useState(Clearv)
@@ -63,8 +61,8 @@ const BackgroundLayout = () => {
   return (
     <>
     <div className="video">
-    {/* <img src={image} alt="weather_image" className='h-screen w-full fixed left-0 top-0 -z-[10] img' /> */}
-    <video className="fixed left-0 top-0 -z-[10] img" src={image} autoPlay loop muted></video>
+    <img src={image} alt="weather_image" className='h-screen w-full fixed left-0 top-0 -z-[10] img' />
+    {/* <video className="fixed left-0 top-0 -z-[10] img" src={image} autoPlay loop muted></video> */}
     <video className="fixed left-0 top-0 -z-[10] vid" src={video} autoPlay loop muted></video>
     </div>
     </>
