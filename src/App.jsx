@@ -12,6 +12,10 @@ function App() {
   // console.log(weather)
 
   const submitCity = () => {
+    if(input==='')
+    {
+      return
+    }
     setPlace(input)
     setInput('')
   }
@@ -23,7 +27,7 @@ function App() {
       <nav className='w-full p-3 flex justify-between items-center'>
         <h1 className='title font-bold tracking-wide text-3xl p-3'>Weather App</h1>
         <div className='search w-[15rem] overflow-hidden shadow-2xl rounded flex items-center p-2 gap-2'>
-          <img src={search} alt="search" className='w-[1.5rem] h-[1.5rem]' />
+          <img src={search} alt="search" className='w-[1.5rem] h-[1.5rem]' onClick={submitCity}/>
           <input onKeyUp={(e) => {
             if (e.key === 'Enter') {
               // sumit the form
