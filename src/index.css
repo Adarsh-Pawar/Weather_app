@@ -75,12 +75,21 @@
     margin: 0;
   }
 
+  .minicard div{
+    width: 9.5rem;
+  }
+
   .video .vid {
     display: none;
   }
 
   .video .img {
     display: block;
+  }
+
+  .mainCard {
+    min-width: 20rem;
+    width: 20rem;
   }
 
 }
