@@ -22,7 +22,9 @@ concurrency:
 
 #Allow repo secrets
 env:
-  VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+  VITE_API_KEY_1: ${{ secrets.VITE_API_KEY_1 }}
+  VITE_API_KEY_2: ${{ secrets.VITE_API_KEY_2 }}
+  VITE_API_KEY_3: ${{ secrets.VITE_API_KEY_3 }}
 
 jobs:
   # Single deploy job since we're just deploying
