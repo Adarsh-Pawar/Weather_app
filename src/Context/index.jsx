@@ -3,14 +3,15 @@ import axios from 'axios'
 import { toast } from "react-toastify";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-const StateContext = createContext()
-var flag = true;
+const StateContext = createContext();
+let flag =true;
 export const StateContextProvider = ({ children }) => {
     const [weather, setWeather] = useState({})
     const [values, setValues] = useState([])
     const [place, setPlace] = useState('Ahmedabad')
     const [thisLocation, setLocation] = useState('')
     const [timeZone, setTimeZone] = useState('Asia/Kolkata')
+    const [isLoading, setIsLoading] = useState(true)
 
     // fetch api
     const fetchWeather = async () => {
@@ -39,11 +40,10 @@ export const StateContextProvider = ({ children }) => {
             setLocation(thisData.address)
             setValues(thisData.values)
             setWeather(thisData.values[0])
-
-            flag = true;
+            flag=true;
+            setIsLoading(false);
         } catch (e) {
-            //if error
-            // console.error(e);
+
             toast.error('This place (' +place+ ') does not exist', {
                 position: "top-center",
                 autoClose: 5000,
@@ -54,11 +54,11 @@ export const StateContextProvider = ({ children }) => {
                 progress: undefined,
                 theme:"colored",
                 });
-
-                flag = false;
+                flag=false;
+                setIsLoading(true);
         }
 
-        if(flag == true){
+        if(flag){
             toast.success('Showing weather of '+place, {
                 position: "top-center",
                 autoClose: 5000,
@@ -88,7 +88,8 @@ export const StateContextProvider = ({ children }) => {
             values,
             thisLocation,
             place,
-            timeZone
+            timeZone,
+            isLoading
         }}>
             {children}
         </StateContext.Provider>
