@@ -16,7 +16,7 @@ import Cloudy from '../assets/images/Cloudy.jpg'
 import Overcast from '../assets/images/overcast.jpg'
 import "../index.css";
 
-const BackgroundLayout = () => {
+const BackgroundLayout = ({onVideoLoaded}) => {
 
   const Cloudyv = 'https://res.cloudinary.com/dlouyhixk/video/upload/v1705852303/cloudy_jbymaj.mp4';
   const Fogv = 'https://res.cloudinary.com/dlouyhixk/video/upload/v1705852297/fog_rso8n6.mp4';
@@ -63,7 +63,7 @@ const BackgroundLayout = () => {
     <div className="video">
     <img src={image} alt="weather_image" className='h-screen w-full fixed left-0 top-0 -z-[10] img' />
     {/* <video className="fixed left-0 top-0 -z-[10] img" src={image} autoPlay loop muted></video> */}
-    <video className="fixed left-0 top-0 -z-[10] vid" src={video} autoPlay loop muted></video>
+    <video className="fixed left-0 top-0 -z-[10] vid" src={video} autoPlay loop muted  onLoadedData={onVideoLoaded}></video>
     </div>
     </>
   )

@@ -10,6 +10,7 @@ import Clear from "./assets/images/clear.jpg";
 
 function App() {
   const [input, setInput] = useState("");
+  const [isVideoLoading,setIsVideoLoading] = useState(true)
   const {
     weather,
     thisLocation,
@@ -58,15 +59,16 @@ function App() {
         <ToastContainer />
 
         {/* If Not Loaded */}
-        {isLoading && (
+        {(isLoading || isVideoLoading) && (
           <div>
-            <div className="video">
+            {/* <div className="video">
               <img
                 src={Clear}
                 alt="weather_image"
                 className="h-screen w-full fixed left-0 top-0 -z-[10] img"
               />
-            </div>
+            </div> */}
+            <BackgroundLayout onVideoLoaded={() => setIsVideoLoading(false)}></BackgroundLayout>
             <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] mt-3 items-center justify-center main">
               <CardSkeleton></CardSkeleton>
               <div className="minicard flex justify-center gap-8 flex-wrap w-[60%]">
@@ -79,9 +81,9 @@ function App() {
         )}
 
         {/* If Loaded */}
-        {!isLoading && (
+        {(!isLoading && !isVideoLoading) && (
           <div>
-            <BackgroundLayout></BackgroundLayout>
+            <BackgroundLayout onVideoLoaded={() => setIsVideoLoading(false)}></BackgroundLayout>
             <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] mt-3 items-center justify-center main">
               <WeatherCard
                 place={thisLocation}
