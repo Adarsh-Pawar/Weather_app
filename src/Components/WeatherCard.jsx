@@ -24,36 +24,33 @@ const WeatherCard = ({
   const specificLocationDate = localDateTime
     .setZone(timeZone)
     .toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
-  const specificLocationTime = localDateTime
-    .setZone(timeZone)
-    .toLocaleString({
-      hour: "numeric",
-      minute: "2-digit",
-      timeZoneName: "short",
-    });
+  const specificLocationTime = localDateTime.setZone(timeZone).toLocaleString({
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  });
 
   useEffect(() => {
     if (iconString) {
-      if (iconString.toLowerCase().includes("cloud")) {
-        setIcon(cloud);
-      } else if (iconString.toLowerCase().includes("rain")) {
-        setIcon(rain);
-      } else if (iconString.toLowerCase().includes("clear")) {
-        setIcon(sun);
+      if (iconString.toLowerCase().includes("snow")) {
+        setIcon(snow);
       } else if (iconString.toLowerCase().includes("thunder")) {
         setIcon(storm);
       } else if (iconString.toLowerCase().includes("fog")) {
         setIcon(fog);
-      } else if (iconString.toLowerCase().includes("snow")) {
-        setIcon(snow);
+      } else if (iconString.toLowerCase().includes("rain")) {
+        setIcon(rain);
       } else if (iconString.toLowerCase().includes("wind")) {
         setIcon(wind);
       } else if (iconString.toLowerCase().includes("overcast")) {
         setIcon(cloud);
+      } else if (iconString.toLowerCase().includes("cloud")) {
+        setIcon(cloud);
+      } else if (iconString.toLowerCase().includes("clear")) {
+        setIcon(sun);
       }
     }
   }, [iconString]);
-  
 
   return (
     <div className="w-[22rem] min-w-[22rem] h-[32rem] glassCard p-4 pt-0 mainCard">
@@ -69,10 +66,16 @@ const WeatherCard = ({
         <p className="flex-1 text-center p-2">{specificLocationTime}</p>
       </div>
       <div className="w-full flex justify-between items-center mt-4 gap-4">
-        <p className="flex-1 text-center p-2 font-bold  shadow rounded-lg" style={{background : "#525FE1"}}>
+        <p
+          className="flex-1 text-center p-2 font-bold  shadow rounded-lg"
+          style={{ background: "#525FE1" }}
+        >
           Wind Speed <p className="font-normal">{windspeed} km/h</p>
         </p>
-        <p className="flex-1 text-center p-2 font-bold rounded-lg " style={{background : "#03C988"}}>
+        <p
+          className="flex-1 text-center p-2 font-bold rounded-lg "
+          style={{ background: "#03C988" }}
+        >
           Humidity <p className="font-normal">{humidity} gm/m&#179;</p>
         </p>
       </div>
