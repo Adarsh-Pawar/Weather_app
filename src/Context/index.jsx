@@ -11,6 +11,7 @@ export const StateContextProvider = ({ children }) => {
     const [weather, setWeather] = useState({})
     const [values, setValues] = useState([])
     const [place, setPlace] = useState('Ahmedabad')
+    const [lastValidPlace, setLastValidPlace] = useState('Ahmedabad')
     const [thisLocation, setLocation] = useState('')
     const [timeZone, setTimeZone] = useState('Asia/Kolkata')
     const [isLoading, setIsLoading] = useState(true)
@@ -64,11 +65,13 @@ export const StateContextProvider = ({ children }) => {
                     });
                     flag=false;
                     setIsLoading(true);
+                    setPlace(lastValidPlace);
             }
             
         }
 
         if(flag){
+            setLastValidPlace(place);
             toast.success('Showing weather of '+place, {
                 position: "top-center",
                 autoClose: 5000,
