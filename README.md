@@ -1,3 +1,3 @@
-#Weather_app
+# Weather App
 ReactJs based web application that shows current weather conditions and more......
-Live Demo:- http://pawaradarsh.me/Weather_app/
+Live Demo:- http://pawaradarsh.tech/Weather_app/
